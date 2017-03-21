@@ -37,3 +37,4 @@ chmod +x count-disables.sh
 
 ### TODO
 - [  ] Universally ignore `node_modules`
+- [  ] Handle edge cases a lil better (just a lil)
