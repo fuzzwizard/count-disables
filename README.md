@@ -5,7 +5,7 @@ Original script via [Callum Macrae's blog](http://macr.ae/article/counting-eslin
 ### Use
 
 ```sh
-chmod +x ./count-disables.sh
+chmod +x count-disables.sh
 # defaults to current directory
 ./count-disables
 # or, to specify a directory...
