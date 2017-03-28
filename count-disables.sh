@@ -5,8 +5,11 @@ DIR=${ARG:-.}
 echo "Searching directory: $DIR"
 echo
 
+# grep -r 'eslint-disable' -h --exclude=node_modules .
+
 # Courtesy of http://macr.ae/article/counting-eslint-disabled.html
-grep -r 'eslint-disable' -h $DIR |    # Find all lines containing "eslint-disable"
+# Find all lines containing "eslint-disable", ignoring `node_modules`
+grep -r 'eslint-disable' -h --exclude=./node_modules/* $DIR | 
     sed -E 's/^.*\/[*/] | \*\/|,//g' | # Remove whitespace and brackets
     tr ' ' '\n' |                      # Put every word on own line
     grep -v 'eslint' |                 # Remove every line containing "eslint"
@@ -16,3 +19,5 @@ grep -r 'eslint-disable' -h $DIR |    # Find all lines containing "eslint-disabl
 
 echo
 echo "Done!"
+
+exit 0
